@@ -19,9 +19,12 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    env:
+      param1: "something"
+      param2: "something"
     strategy:
       matrix:
-        project: [ ]
+        project: ${{ fromJSON(['a','b']) }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
