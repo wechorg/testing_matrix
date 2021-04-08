@@ -18,9 +18,16 @@ jobs:
   detect-changes:
     runs-on: ubuntu-latest
     outputs:
-      projects: '[]'    
+      projects: ${{  steps.filter.outputs.changes }}   
     steps:
     - uses: actions/checkout@v2
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: |
+          src:
+            - 'src/**'
+
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
@@ -38,4 +45,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo blah
+        run: echo ${{ needs.detect-changes.outputs.projects }}
