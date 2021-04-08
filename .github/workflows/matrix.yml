@@ -22,7 +22,7 @@ jobs:
     env:
       param1: "something"
       param2: "something"
-    if: fromJSON('[]') != []
+    if: fromJSON('[]') != '[]'
     strategy:
       matrix:
         project: ${{ fromJSON('[]') }}
