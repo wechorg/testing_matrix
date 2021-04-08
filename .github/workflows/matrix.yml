@@ -18,7 +18,7 @@ jobs:
   detect-changes:
     runs-on: ubuntu-latest
     outputs:
-      projects: '["a","b","c"]'    
+      projects: '[]'    
     steps:
     - uses: actions/checkout@v2
   # This workflow contains a single job called "build"
