@@ -22,7 +22,7 @@ jobs:
     env:
       param1: "there"
       param2: "something"
-    if: fromJSON('[]') == '[]'
+    if: fromJSON('[]') != '[]'
     strategy:
       matrix:
         project: ${{ fromJSON('["a","b"]') }}
@@ -34,4 +34,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo ${{env.param1}}
+        run: echo ${{fromJSON('[]')}}
