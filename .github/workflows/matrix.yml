@@ -24,7 +24,7 @@ jobs:
       param2: "something"
     strategy:
       matrix:
-        project: ${{ fromJSON('[${{ env.param1 }},"ab"]') }}
+        project: ${{ fromJSON('["abc","ab"]') }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
