@@ -22,10 +22,10 @@ jobs:
     env:
       param1: "something"
       param2: "something"
-    if: fromJSON('["abc","ab"]')
+    if: fromJSON('[]')
     strategy:
       matrix:
-        project: ${{ fromJSON('["abc","ab"]') }}
+        project: ${{ fromJSON('[]') }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
